@@ -3,13 +3,15 @@ import React from 'react'
 import CocktailListItem from './CocktailListItem'
 
 
-const CocktailList = () => {
+const CocktailList = ({ cocktailList }) => {
 
-    const dummyCocktails = [{ id: 1, key: 1, name: 'Martini (classic)', image: 'https://cdn.diffords.com/contrib/stock-images/2018/05/5af301cc25362.jpg', stars: 5 }, { id: 2, key: 2, name: 'Daiquiri (natural)', image: 'https://cdn.diffords.com/contrib/stock-images/2018/05/5af3010ae8f19.jpg', stars: 4 }]
+    // TODO: if user is the owner, put an "Edit" button below the cocktail.
+
+
 
     return (
-        <ul className="flex">
-            {dummyCocktails.map((cocktail) => (
+        <ul className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
+            {cocktailList.map((cocktail) => (
                 <CocktailListItem
                     id={cocktail.id}
                     key={cocktail.key}

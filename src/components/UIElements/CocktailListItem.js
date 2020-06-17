@@ -4,7 +4,7 @@ import Card from './Card'
 import { Link } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
 
-
+// TOFIX: put the RANGE function into a separate file in utils. It was giving an error before.
 
 const CocktailListItem = ({ id, image, name, stars }) => {
 
@@ -14,15 +14,13 @@ const CocktailListItem = ({ id, image, name, stars }) => {
 
     const rangeStars = RANGE(1, stars)
     const blankStars = 5 - stars
-    console.log(rangeStars)
-    console.log(blankStars)
 
     return (
         <>
-            <li>
+            <li className="mb-2">
                 <Card>
-                    <div className="">
-                        <Link to={`/cocktails/${id}`}><img src={image} alt={name} className="" /></Link>
+                    <div className="flex justify-center">
+                        <Link to={`/cocktails/${id}`}><img src={image} alt={name} className="h-56 md:h-64" /></Link>
                     </div>
                     <div className="bg-yellow-500 px-1 py-1 rounded-lg text-sm text-center font-semibold relative truncate">
                         {name}

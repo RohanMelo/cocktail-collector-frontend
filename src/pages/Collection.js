@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import Home from './Home'
+import AuthContext from '../shared/context/AuthContext'
 
 const Collection = () => {
+
+    const auth = useContext(AuthContext)
+    const passId = auth.userId
+
     return (
-        <div>
-            Hello from Collection
-        </div>
+        <Home passId={passId} />
     )
 }
 

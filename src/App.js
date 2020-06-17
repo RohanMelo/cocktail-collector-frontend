@@ -10,12 +10,14 @@ import MainNavigation from './components/Navigation/MainNavigation'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
 import AddCocktail from './pages/AddCocktail'
+import CocktailDetail from './pages/CocktailDetail'
 import EditCocktail from './pages/EditCocktail'
 import Auth from './pages/Auth'
+import SignUp from './pages/SignUp'
 import AuthContext from './shared/context/AuthContext'
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [userId, setUserId] = useState(false);
 
   const login = useCallback(uid => {
@@ -43,6 +45,9 @@ function App() {
           <AddCocktail />
         </Route>
         <Route path="/cocktails/:cocktailId" exact>
+          <CocktailDetail />
+        </Route>
+        <Route path="/cocktails/update/:cocktailId" exact>
           <EditCocktail />
         </Route>
         <Redirect to="/" />
@@ -54,21 +59,26 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/:userId/collection" exact>
-          <Collection />
-        </Route>
+
         <Route path="/auth">
           <Auth />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/cocktails/:cocktailId" exact>
+          <CocktailDetail />
         </Route>
         <Redirect to="/auth" />
       </Switch>
     )
   }
+
   return (
     <AuthContext.Provider
       value={{
         isLoggedIn,
-        userId,
+        userId: "user1",
         login,
         logout
       }}

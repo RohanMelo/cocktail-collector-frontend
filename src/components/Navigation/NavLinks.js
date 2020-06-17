@@ -14,7 +14,7 @@ const NavLinks = () => {
                 </li>)}
             {auth.isLoggedIn && (
                 <li>
-                    <button onClick={auth.logout} className="block ml-2 border-none text-white font-semibold uppercase text-sm tracking-wide hover:text-yellow-500">Logout</button>
+                    <button onClick={auth.logout} className="block ml-2 md:ml-10 border-none text-white font-semibold uppercase text-sm tracking-wide hover:text-yellow-500">Logout</button>
                 </li>)}
             {!auth.isLoggedIn && (
                 <li className="text-white font-semibold uppercase text-sm tracking-wide ml-2 hover:text-yellow-500">
