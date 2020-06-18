@@ -9,7 +9,7 @@ import {
 import MainNavigation from './components/Navigation/MainNavigation'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
-import AddCocktail from './pages/AddCocktail'
+import CreateCocktail from './pages/CreateCocktail'
 import CocktailDetail from './pages/CocktailDetail'
 import EditCocktail from './pages/EditCocktail'
 import Auth from './pages/Auth'
@@ -41,8 +41,8 @@ function App() {
         <Route path="/:userId/collection" exact>
           <Collection />
         </Route>
-        <Route path="/cocktails/add" exact>
-          <AddCocktail />
+        <Route path="/cocktails/create" exact>
+          <CreateCocktail />
         </Route>
         <Route path="/cocktails/:cocktailId" exact>
           <CocktailDetail />
