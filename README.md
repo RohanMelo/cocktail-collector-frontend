@@ -1,4 +1,4 @@
-#Cocktail Collector
+# Cocktail Collector
 
 A fast and minimalistic Cocktail recipe sharing app made with React and TailwindCSS.
 <p align="center">
